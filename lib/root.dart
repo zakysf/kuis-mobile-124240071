@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:latihankuis/models/data.dart';
 import 'package:latihankuis/views/home.dart';
 import 'package:latihankuis/views/profile.dart';
 
@@ -16,7 +17,7 @@ class _RootState extends State<Root> {
   Widget build(BuildContext context) {
     List<Widget> pages = [
       HomePage(),
-      ProfilePage(),
+      ProfilePage(user: user1,),
     ];
     return Scaffold(
       appBar: AppBar(

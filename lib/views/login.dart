@@ -19,12 +19,12 @@ class _LoginPageState extends State<LoginPage> {
     String username = usernameController.text;
     String password = passwordController.text;
 
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Root()));
 
     if (username == user1.username && password == user1.password) {
       setState(() {
         isLoggedIn = true;
       });
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Root()));
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           backgroundColor: Colors.green,
@@ -55,7 +55,9 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Ini Page Login"),
+              Image.network("https://lokerbumn.com/wp-content/uploads/2022/06/Mie-Gacoan.jpg"),
+              SizedBox(height: 30),
+              Text("Selamat Datang di Gacoan"),
               SizedBox(height: 30),
               TextField(
                 controller: usernameController,
@@ -83,9 +85,9 @@ class _LoginPageState extends State<LoginPage> {
                 width: 180,
                 child: ElevatedButton(
                   onPressed: login,
-                  child: Text("Login"),
+                  child: Text("Login", style: TextStyle(color: Colors.white)),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.pink[100],
+                    backgroundColor: Colors.indigoAccent,
                   ),
                 ),
               ),
